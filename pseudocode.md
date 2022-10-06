@@ -10,7 +10,7 @@ To get a reward, the machine has to form a winning symbol combination on adjacen
 PseudoCode
 
 1. Define Required Constants:
-    1.1) Define a color object with keys from 1-9 that represent the colors on the reels.
+    1.1) Define a color object with keys from 1-7 that represent the colors on the reels.
     1.2) Define the 9 total winning conditions, when all of the colors are the same in a row.
 
 2. Define Required Variables used to track the state of the game.
