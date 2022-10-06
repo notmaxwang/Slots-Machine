@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    font-size: 5vmin;
+    color: black;
+    letter-spacing: 1vmin;
+    font-family: 'Gemunu Libre', sans-serif;
+}
+
+h3 {
+    color: darkgrey;
+    font-size: 2vmin;
+}
+
+#machine {
+    display: grid;
+    grid-template-columns: repeat(3, 10vmin);
+    grid-template-rows: repeat(1, 20vmin);
+    gap: 1vmin;
+}
+
+
+#machine > div {
+    border: 0.1vmin solid black;
+}
+
+#roll {
+    margin-top: -5vmin;
+    margin-left: 40vmin;
+}
+
+#credit {
+    margin-top: 5vmin;
+}
+
+.adjust {
+    font-size: 2vmin;
+    border-radius: 5vmin;
+    border: 0.1vmin solid black;
+    color: grey;
+}
+
+#add {
+    margin-top: -6vmin;
+    margin-left: 15vmin;;
+}
+
+#add:hover {
+    color: black;
+    background-color: rgb(38, 201, 38);
+}
+
+#sub {
+    margin-left: 15vmin;
+}
+
+#sub:hover {
+    color: black;
+    background-color: rgb(231, 56, 56);
+}
