@@ -47,6 +47,7 @@ function init() {
     reels = [0,1,2];
     earning = 100;
     currWager = 0;
+    message.innerText = 'Enter your wager and start making moneyyyy!';
     displayWager.innerText = 'Wager: $' + currWager;
     render();
 }
@@ -67,19 +68,37 @@ function renderMessage() {
     if (earning <= 0) {
         message.innerText = 'You lost all your money!!';
     } 
-    if (currWager > earning) {
+    if (currWager > earning && earning != 0) {
         message.innerText = 'Please lower your wager!';
+    }
+
+    if (WINSTATE.includes(reels)) {
+        message.innerHTML = `CONGRATS!! YOU WON ${currWager * 100} DOLLARS!`;
+        document.getElementById('earning').innerText = 'Earning: ' + earning;
+    } else {
+        document.getElementById('earning').innerText = 'Earning: ' + earning;
     }
 }
 
 
 function handleClick(evt) {
     if (currWager > earning || earning <= 0) return;
-    getCombo();
+    reels = getCombo();
+    if (WINSTATE.includes(reels)) {
+        earning = earning + currWager * 100;
+    } else {
+        earning = earning - currWager;
+    }
+    render();
 }
 
 function getCombo() {
-    
+    let storeArr = [];
+    for (let i = 0; i < REELSIZE; i++) {
+        let storeRand = Math.floor(Math.random() * 7);
+        storeArr.push(storeRand);
+    }
+    return storeArr;
 }
 
 
