@@ -47,7 +47,6 @@ function init() {
     reels = [0,1,2];
     earning = 100;
     currWager = 0;
-    message.innerText = 'Enter your wager and start making moneyyyy!';
     displayWager.innerText = 'Wager: $' + currWager;
     render();
 }
@@ -66,26 +65,39 @@ function renderBoard() {
 
 function renderMessage() {
     if (earning <= 0) {
-        message.innerText = 'You lost all your money!!';
     } 
     if (currWager > earning && earning != 0) {
         message.innerText = 'Please lower your wager!';
     }
 
-    if (WINSTATE.includes(reels)) {
+    if (hasArray(WINSTATE, reels) === 3) {
         message.innerHTML = `CONGRATS!! YOU WON ${currWager * 100} DOLLARS!`;
         document.getElementById('earning').innerText = 'Earning: ' + earning;
-    } else {
+    } else if (hasArray(WINSTATE, reels) === 2){
+        message.innerHTML = `CONGRATS!! YOU WON ${currWager} DOLLARS!`;
+        document.getElementById('earning').innerText = 'Earning: ' + earning;
+    } else if (hasArray(WINSTATE, reels) < 2){
+        message.innerText = 'Enter your wager and start making moneyyyy!';
         document.getElementById('earning').innerText = 'Earning: ' + earning;
     }
 }
 
 
 function handleClick(evt) {
-    if (currWager > earning || earning <= 0) return;
+    if (earning === 0) {
+        message.innerText = 'You lost all your money!!';
+        return;
+    }
+
+    if (currWager > earning) {
+        message.innerText = 'Please lower your wager!';
+        return;
+    }
     reels = getCombo();
-    if (WINSTATE.includes(reels)) {
+    if (hasArray(WINSTATE, reels) === 3) {
         earning = earning + currWager * 100;
+    } else if (hasArray(WINSTATE, reels) === 2){
+        earning = earning + currWager;
     } else {
         earning = earning - currWager;
     }
@@ -113,6 +125,20 @@ function getLower(evt) {
         currWager = currWager - 5;
         displayWager.innerText = 'Wager: $' + currWager;
     }
+}
+
+function hasArray(arr1, arr2) {
+    let maxReel = 0;
+    for(let i = 0; i < arr1.length; i++) {
+        let correct = 0;
+        for(let j = 0; j < REELSIZE; j++) {
+            if (arr1[i][j] === arr2[j]) {
+                correct += 1
+            } 
+        }
+        maxReel = Math.max(maxReel, correct);
+    }
+    return maxReel;
 }
 
 
