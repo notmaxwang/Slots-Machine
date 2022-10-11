@@ -72,13 +72,13 @@ function renderMessage() {
 
     if (hasArray(WINSTATE, reels) === 3) {
         message.innerHTML = `CONGRATS!! YOU WON ${currWager * 100} DOLLARS!`;
-        document.getElementById('earning').innerText = 'Earning: ' + earning;
+        document.getElementById('earning').innerText = 'Earning: $' + earning;
     } else if (hasArray(WINSTATE, reels) === 2){
         message.innerHTML = `CONGRATS!! YOU WON ${currWager} DOLLARS!`;
-        document.getElementById('earning').innerText = 'Earning: ' + earning;
+        document.getElementById('earning').innerText = 'Earning: $' + earning;
     } else if (hasArray(WINSTATE, reels) < 2){
         message.innerText = 'Enter your wager and start making moneyyyy!';
-        document.getElementById('earning').innerText = 'Earning: ' + earning;
+        document.getElementById('earning').innerText = 'Earning: $' + earning;
     }
 }
 

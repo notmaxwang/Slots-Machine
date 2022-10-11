@@ -37,11 +37,21 @@ h3 {
 
 #roll {
     margin-top: -5vmin;
-    margin-left: 40vmin;
+    margin-left: 42vmin;
+    padding: 2vmin;
+    font-size: 1.5vmin;
+    border-radius: 3vmin;
+    border: 0.1vmin solid grey;
+    color: grey;
 }
 
-#credit {
-    margin-top: 5vmin;
+#roll:hover {
+    color: white;
+    background-color: darkgrey;
+  }
+
+#earning {
+    margin-top: 6vmin;
 }
 
 .adjust {
@@ -69,3 +79,18 @@ h3 {
     color: black;
     background-color: rgb(231, 56, 56);
 }
+
+
+#again {
+    margin-top: 4vmin;
+    padding: 1.5vmin;
+    font-size: 1.5vmin;
+    border-radius: 2vmin;
+    border: 0.1vmin solid grey;
+    color: grey;
+  }
+
+  #again:hover {
+    color: white;
+    background-color: darkgrey;
+  }
