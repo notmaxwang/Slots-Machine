@@ -9,6 +9,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(10, 27, 41);
+    background-image: url("https://thumbs.dreamstime.com/b/big-win-red-slot-machine-game-jackpot-lucky-seven-casino-vegas-triple-221759817.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 header {
@@ -32,6 +36,8 @@ h3 {
 
 
 #machine > div {
+    margin-top: 8vmin;
+    margin-bottom: -10vmin;
     border: 0.1vmin solid black;
 }
 
@@ -48,10 +54,17 @@ h3 {
 #roll:hover {
     color: white;
     background-color: darkgrey;
-  }
+}
+
 
 #earning {
     margin-top: 6vmin;
+    
+    font-size: 2em;
+}
+
+#wager {
+    font-size: 1.2em;
 }
 
 .adjust {

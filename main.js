@@ -1,5 +1,6 @@
 //Constants
 
+
 const COLORS = {
     '0': 'red',
     '1': 'orange',
@@ -49,6 +50,7 @@ function init() {
     currWager = 0;
     displayWager.innerText = 'Wager: $' + currWager;
     render();
+    startConfetti();
 }
 
 function render() {
@@ -102,6 +104,7 @@ function handleClick(evt) {
         earning = earning - currWager;
     }
     render();
+    //party.confetti(element);
 }
 
 function getCombo() {
@@ -121,7 +124,7 @@ function getHigher(evt) {
 }
 
 function getLower(evt) {
-    if (currWager > 5) {
+    if (currWager > 0) {
         currWager = currWager - 5;
         displayWager.innerText = 'Wager: $' + currWager;
     }

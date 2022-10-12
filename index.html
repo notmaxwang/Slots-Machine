@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <script src="confetti.js"></script>
     <script defer src="main.js"></script>
 </head>
 <body>
@@ -27,3 +29,10 @@
     <button id="again">Play Again</button>
 </body>
 </html>
+
+<script>
+    document.querySelector('button').addEventListener('click', function() {
+        party.confetti(document.getElementById('roll'));
+    })
+    
+</script>
