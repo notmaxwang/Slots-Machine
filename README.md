@@ -31,6 +31,10 @@ https://notmaxwang.github.io/Slots-Machine/
 ## Next Steps
 Continuous display random colors on the reels when the program is on idle waiting for user input.
 
+Add audio for hitting the combo and winning money.
+
 Add more QOL buttons such as put max wager, clear all wagers. 
 
 Add animations for the roll lever to actually move up and down when user clicks roll. 
+
+Add styling to support devices with varying screen sizes.
