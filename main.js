@@ -8,7 +8,11 @@ const COLORS = {
     '3': 'green',
     '4': 'blue',
     '5': 'indigo',
-    '6': 'violet'
+    '6': 'violet',
+    '7': 'cyan',
+    '8': 'pink',
+    '9': 'purple',
+    '10': 'cyan'
 }
 
 const REELSIZE = 3;
@@ -19,7 +23,11 @@ const WINSTATE = [[0,0,0],
                  [3,3,3],
                  [4,4,4],
                  [5,5,5],
-                 [6,6,6]
+                 [6,6,6],
+                 [7,7,7],
+                 [8,8,8],
+                 [9,9,9],
+                 [10,10,10]
 ];
 
 // State Variables
@@ -110,7 +118,7 @@ function handleClick(evt) {
 function getCombo() {
     let storeArr = [];
     for (let i = 0; i < REELSIZE; i++) {
-        let storeRand = Math.floor(Math.random() * 7);
+        let storeRand = Math.floor(Math.random() * 11);
         storeArr.push(storeRand);
     }
     return storeArr;

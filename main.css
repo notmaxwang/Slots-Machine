@@ -47,13 +47,16 @@ h3 {
 }
 
 #roll {
-    margin-top: -5vmin;
-    margin-left: 68vmin;
+    margin-top: -6vmin;
+    margin-left: 69vmin;
     padding: 2vmin;
     font-size: 1.5vmin;
     border-radius: 3vmin;
     border: 0.1vmin solid grey;
     color: grey;
+    position: absolute;
+    top: 22em;
+    right: 34.5em;
 }
 
 #roll:hover {
